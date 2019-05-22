@@ -14,9 +14,7 @@ node {
     }
 }
 
-stage('Json coverage') {
 
-}
 stage('MUnit Test Report') {
                 script {
               publishHTML(target:[allowMissing: false,alwaysLinkToLastBuild: true,keepAll: true,reportDir: 'target/site/munit/coverage',reportFiles: 'summary.html',reportName: 'MUnit Test Report',reportTitles: 'MUnit Test Coverage Report'])
