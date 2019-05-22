@@ -9,8 +9,10 @@ import java.net.URL
 node {
 
 stage('Json coverage') {
+  script{
 
   testFunc(MUnit)
+  }
 }
 stage('MUnit Test Report') {
                 script {
