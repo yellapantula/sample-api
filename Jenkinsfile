@@ -1,12 +1,20 @@
 @Library('shared-lib2')_
 
 pipeline{
-          get {
-            always {
-              script {
-                    cleanWs()
-                    MUnit()
-                }
-            }            
-        }
+    agent any
+      stages{
+          stage("Build"){
+             steps{                
+                    build {
+                      always {
+                        script {
+                              cleanWs()
+                              MUnit()
+                          }
+                      }            
+                  }
+             }
+          }
+      }
+                    
 }
