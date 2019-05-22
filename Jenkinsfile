@@ -7,6 +7,12 @@ import groovy.json.JsonOutput
 import groovy.json.*
 import java.net.URL
 node {
+  
+  stage('build'){
+    script {
+        MUnit.testFunc()
+    }
+}
 
 stage('Json coverage') {
 
@@ -18,8 +24,4 @@ stage('MUnit Test Report') {
               }
               }
 }
-stage('build'){
-    script {
-        MUnit()
-    }
-}
+
