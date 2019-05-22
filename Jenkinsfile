@@ -16,7 +16,6 @@ node {
 
 stage('Json coverage') {
 
-  testFunc()
 }
 stage('MUnit Test Report') {
                 script {
