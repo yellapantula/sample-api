@@ -9,7 +9,7 @@ import java.net.URL
 node {
 stage('build'){
     script {
-        MUnit()
+        MUnit(currentBuild.currentResult)
     }
 }
 stage('build') {
