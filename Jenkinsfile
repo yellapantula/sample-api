@@ -5,14 +5,13 @@ pipeline{
       stages{
           stage("Build"){
              steps{                
-                    build {
                       always {
                         script {
                               cleanWs()
                               MUnit()
                           }
                       }            
-                  }
+                  
              }
           }
       }
