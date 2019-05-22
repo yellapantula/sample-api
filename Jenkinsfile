@@ -7,11 +7,7 @@ import groovy.json.JsonOutput
 import groovy.json.*
 import java.net.URL
 node {
-stage('build'){
-    script {
-        MUnit(currentBuild.currentResult)
-    }
-}
+
 stage('build') {
             script {
 			sh 'mvn clean package'
@@ -19,7 +15,7 @@ stage('build') {
 }
 stage('Json coverage') {
 
-  testFunc()
+  testFunc(MUnit)
 }
 stage('MUnit Test Report') {
                 script {
