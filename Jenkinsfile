@@ -20,7 +20,7 @@ pipeline{
 				}
 		    }
 		}
-		stage('build'){
+		stage('munit'){
 		     steps{
 			script {
 			  MUnit
