@@ -13,13 +13,29 @@ pipeline{
       jdk  'JAVA'
     	}
 	stages {
-	stage('build') {
-            steps {
-		        configFileProvider([configFile(fileId: 'config', variable: 'MAVEN_SETTINGS_XML')]) {
-			sh "mvn -s $MAVEN_SETTINGS_XML clean package"
+		stage('build') {
+		    steps {
+				configFileProvider([configFile(fileId: 'config', variable: 'MAVEN_SETTINGS_XML')]) {
+				sh "mvn -s $MAVEN_SETTINGS_XML clean package"
+				}
+		    }
+		}
+		stage('build'){
+			script {
+			  MUnit
+				 }
 			}
-	    }
+
+
+		stage('MUnit Test Report') {
+			script {
+		      publishHTML(target:[allowMissing: false,alwaysLinkToLastBuild: true,keepAll: true,reportDir: 'target/site/munit/coverage',reportFiles: 'summary.html',reportName: 'MUnit Test Report',reportTitles: 'MUnit Test Coverage Report'])
+			}
+		      }
 	}
-   }
+
+
+   	
+	
 }
   
