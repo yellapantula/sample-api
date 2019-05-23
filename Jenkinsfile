@@ -20,14 +20,8 @@ pipeline{
 				}
 		    }
 		}
-		stage('munit'){
-		     steps{
-			script {
-			  MUnit
-				 }
-		    	 }	
-			}
 
+	  	MUnit.call()
 
 		stage('MUnit Test Report') {
 		       steps{
@@ -37,6 +31,9 @@ pipeline{
 			      }
 			}	
 	}
+
+
+
 
 
    	
