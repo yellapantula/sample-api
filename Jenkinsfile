@@ -7,6 +7,9 @@ import groovy.json.JsonOutput
 import groovy.json.*
 import java.net.URL
 node {
+	tools {
+      	maven 'Maven'
+    }
   
 	  stage('build') {
 		    script {
