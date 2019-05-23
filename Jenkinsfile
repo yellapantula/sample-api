@@ -22,7 +22,9 @@ pipeline{
 		}
 		stage('test function'){
 			steps{
+				script{
 				MUnit
+				}
 			}
 		}
 
