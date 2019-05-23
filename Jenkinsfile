@@ -20,8 +20,11 @@ pipeline{
 				}
 		    }
 		}
-
-	  	MUnit.call()
+		stage('test function'){
+			steps{
+				MUnit()
+			}
+		}
 
 		stage('MUnit Test Report') {
 		       steps{
