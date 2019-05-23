@@ -10,7 +10,7 @@ node {
   
   stage('build'){
     script {
-        MUnit.testFunc()
+        MUnit
     }
 }
 
