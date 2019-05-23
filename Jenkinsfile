@@ -11,14 +11,14 @@ pipeline{
     tools {
       maven 'Maven'
     	}
-	stages{
-	  stage('build') {
-		  steps{
-		    script {
-				sh 'mvn clean package'
-		 	   }
-		  }
+	stages {
+	stage('build') {
+            steps {
+		        configFileProvider([configFile(fileId: 'config', variable: 'MAVEN_SETTINGS_XML')]) {
+			sh "mvn -s $MAVEN_SETTINGS_XML clean package"
 			}
+	    }
 	}
+   }
 }
   
