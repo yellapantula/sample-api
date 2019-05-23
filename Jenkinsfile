@@ -10,6 +10,7 @@ pipeline{
   agent any
     tools {
       maven 'Maven'
+      java  'JAVA'
     	}
 	stages {
 	stage('build') {
