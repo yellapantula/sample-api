@@ -22,7 +22,7 @@ pipeline{
 		}
 		stage('test function'){
 			steps{
-				MUnit.testFunc()
+				MUnit.call()
 			}
 		}
 
