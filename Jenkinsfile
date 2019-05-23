@@ -6,15 +6,17 @@ import groovy.json.JsonBuilder
 import groovy.json.JsonOutput
 import groovy.json.*
 import java.net.URL
-node {
-	tools {
-      	maven 'Maven'
-    }
-  
+pipeline{
+  agent any
+    tools {
+      maven 'Maven'
+    	}
+	stages{
 	  stage('build') {
 		    script {
 				sh 'mvn clean package'
-		 }
+		 	   }
+			}
 	}
 }
   
