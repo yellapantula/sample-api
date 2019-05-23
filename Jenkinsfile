@@ -1,4 +1,4 @@
-@Library('shared-lib2')_
+@Library('shared-lib2') _
 import hudson.model.*
 import hudson.EnvVars
 import groovy.json.JsonSlurperClassic
@@ -22,7 +22,7 @@ pipeline{
 		}
 		stage('test function'){
 			steps{
-				MUnit(currentBuild.result)
+				MUnit()
 			}
 		}
 
