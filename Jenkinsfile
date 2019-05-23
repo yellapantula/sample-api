@@ -8,9 +8,10 @@ import groovy.json.*
 import java.net.URL
 node {
   
-  stage('build') {
-            script {
-			sh 'mvn clean package'
-         }
+	  stage('build') {
+		    script {
+				sh 'mvn clean package'
+		 }
+	}
 }
   
