@@ -20,13 +20,13 @@ pipeline{
 				}
 		    }
 		}
-		stage('test function'){
+		/*stage('test function'){
 			steps{
 				script{
 				MUnit
 				}
 			}
-		}
+		}*/
 
 		stage('MUnit Test Report') {
 		       steps{
@@ -36,6 +36,15 @@ pipeline{
 			      }
 			}	
 	}
+
+	        post {
+		  always {
+		      script {
+			    cleanWs()
+			    MUnit()
+			}
+		    }            
+       		 }
 
 
 
