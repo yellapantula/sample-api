@@ -23,7 +23,7 @@ pipeline{
 		stage('test function'){
 			steps{
 				script{
-				testFunc()
+				mUnit.testFunc()
 				}
 			}
 		}
